@@ -4,6 +4,7 @@ import com.intern.base.TestBase;
 import com.intern.pages.*;
 import com.intern.util.NavigationBar;
 import com.intern.util.ScrollDown;
+import com.intern.util.ScrollUp;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -21,6 +22,7 @@ public class TestCaseMix extends TestBase {
     private ReviewPage reviewPage;
     private NavigationBar navigationBar;
     private ScrollDown scrollDown;
+    private ScrollUp scrollUp;
 
     public TestCaseMix(){
         super();
@@ -39,6 +41,7 @@ public class TestCaseMix extends TestBase {
         reviewPage = new ReviewPage();
         navigationBar = new NavigationBar();
         scrollDown = new ScrollDown();
+        scrollUp = new ScrollUp();
     }
 
     @AfterMethod
@@ -47,14 +50,19 @@ public class TestCaseMix extends TestBase {
     }
 
     @Test
-    public void testMix(){
+    public void testMix() throws InterruptedException {
         carouselPage.tapNextBtn();
         carouselPage.tapNextBtn();
         carouselPage.tapGetbtn();
         onboardingpage.clickLoginBtn();
-        loginForm.loginProses("putwid", "tester123");
+        loginForm.loginProses(prop.getProperty("username"), prop.getProperty("password"));
         homepage.tapXBtn();
         homepage.tapNotifBtn();
+        Thread.sleep(5000);
+        scrollDown.ScrollDown();
+        scrollDown.ScrollDown();
+        scrollUp.ScrollUp();
+        scrollUp.ScrollUp();
         notifPage.tapPostImg();
         notifPage.tapComentBtn();
         comentPage.comentproses("Test");
@@ -71,22 +79,34 @@ public class TestCaseMix extends TestBase {
         scrollDown.ScrollDown();
         scrollDown.ScrollDown();
         scrollDown.ScrollDown();
-        scrollDown.ScrollDown();
         navigationBar.tapProfileBtn();
         scrollDown.ScrollDown();
         scrollDown.ScrollDown();
+        scrollUp.ScrollUp();
+        scrollUp.ScrollUp();
         navigationBar.tapHomeBtn();
+        scrollUp.ScrollUp();
+        scrollUp.ScrollUp();
         homepage.tapNotifBtn();
         notifPage.tapBackBtn();
         homepage.tapBrandBtn();
         brandPage.tapPLBtn();
         brandPage.tapPDBtn();
+        scrollDown.ScrollDown();
+        scrollDown.ScrollDown();
+        scrollDown.ScrollDown();
         brandPage.tapRDBtn();
         reviewPage.tapBackBtn();
-        brandPage.tapRDBtn();
+        reviewPage.tapRLBtn();
+        reviewPage.tapOKBtn();
         reviewPage.tapBackBtn();
         reviewPage.tapBackBtn();
+        Thread.sleep(2000);
+        scrollUp.ScrollUp();
+        scrollUp.ScrollUp();
         brandPage.tapPDBtn();
+        scrollDown.ScrollDown();
+        scrollDown.ScrollDown();
         brandPage.tapRDBtn();
         reviewPage.tapBackBtn();
         reviewPage.tapBackBtn();
@@ -97,10 +117,14 @@ public class TestCaseMix extends TestBase {
         homepage.tapBrandBtn();
         brandPage.tapPLBtn();
         brandPage.tapPDBtn();
+        scrollDown.ScrollDown();
+        scrollDown.ScrollDown();
         brandPage.tapRDBtn();
         reviewPage.tapBackBtn();
         reviewPage.tapBackBtn();
         brandPage.tapPDBtn();
+        scrollDown.ScrollDown();
+        scrollDown.ScrollDown();
         brandPage.tapRDBtn();
         reviewPage.tapBackBtn();
         reviewPage.tapBackBtn();
@@ -111,19 +135,17 @@ public class TestCaseMix extends TestBase {
         homepage.tapNotifBtn();
         notifPage.tapBackBtn();
         homepage.tapNotifBtn();
-        notifPage.tapUserBtn();
-        notifPage.tapImgPost();
+        notifPage.tapPostImg();
         notifPage.tapComentBtn();
         comentPage.comentproses("Test");
         comentPage.tapPostBtn();
         comentPage.tapBackBtn();
         comentPage.tapBackBtn();
         comentPage.tapBackBtn();
-        comentPage.tapBackBtn();
         homepage.tapNotifBtn();
         notifPage.tapBackBtn();
         navigationBar.tapProfileBtn();
-        homepage.tapHomeBtn();
+        navigationBar.tapHomeBtn();
         homepage.tapNotifBtn();
         notifPage.tapBackBtn();
         homepage.tapNotifBtn();
@@ -131,7 +153,7 @@ public class TestCaseMix extends TestBase {
         homepage.tapNotifBtn();
         notifPage.tapBackBtn();
         navigationBar.tapProfileBtn();
-        homepage.tapHomeBtn();
+        navigationBar.tapHomeBtn();
         homepage.tapNotifBtn();
         notifPage.tapBackBtn();
     }

@@ -13,10 +13,6 @@ public class HomePage extends TestBase {
     @AndroidFindBy(id = "com.fdbr.android.debug:id/toolbar_notification_button")
     MobileElement btnNotif;
     @AndroidFindBy(id = "com.fdbr.android.debug:id/container_tab")
-    MobileElement FeedBtn;
-    @AndroidFindBy(id = "com.fdbr.android.debug:id/container_tab")
-    MobileElement UserBtn;
-    @AndroidFindBy(id = "com.fdbr.android.debug:id/container_tab")
     MobileElement HomeBtn;
     @AndroidFindBy(id = "com.fdbr.android.debug:id/item_brand")
     MobileElement BrandBtn;
@@ -31,12 +27,6 @@ public class HomePage extends TestBase {
     }
     public void tapNotifBtn(){
         btnNotif.click();
-    }
-    public void tapFeedBtn(){
-        FeedBtn.click();
-    }
-    public void tapUserBtn(){
-        UserBtn.click();
     }
     public void tapHomeBtn(){
         HomeBtn.click();
