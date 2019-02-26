@@ -82,7 +82,6 @@ public class TestCaseMix extends TestBase {
         navigationBar.tapProfileBtn();
         scrollDown.ScrollDown();
         scrollDown.ScrollDown();
-        scrollDown.ScrollDown();
         scrollUp.ScrollUp();
         scrollUp.ScrollUp();
         navigationBar.tapHomeBtn();
