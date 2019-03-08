@@ -10,6 +10,8 @@ public class OnBoardingPage extends TestBase {
 
     @AndroidFindBy(id = "com.fdbr.android.debug:id/rel_login")
     MobileElement Loginbtn;
+    @AndroidFindBy(id="com.fdbr.android.debug:id/rel_signup")
+    MobileElement btnSignUp;
 
     public OnBoardingPage(){
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -17,5 +19,9 @@ public class OnBoardingPage extends TestBase {
 
     public void clickLoginBtn(){
         Loginbtn.click();
+    }
+
+    public void tapBtnSignUp(){
+        btnSignUp.click();
     }
 }

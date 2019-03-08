@@ -1,5 +1,6 @@
 package com.intern.testcases;
 
+import com.github.javafaker.Faker;
 import com.intern.base.TestBase;
 import com.intern.pages.*;
 import com.intern.util.NavigationBar;
@@ -23,6 +24,7 @@ public class TestCaseMix extends TestBase {
     private NavigationBar navigationBar;
     private ScrollDown scrollDown;
     private ScrollUp scrollUp;
+    private Faker faker;
 
     public TestCaseMix(){
         super();
@@ -42,6 +44,7 @@ public class TestCaseMix extends TestBase {
         navigationBar = new NavigationBar();
         scrollDown = new ScrollDown();
         scrollUp = new ScrollUp();
+        faker = new Faker();
     }
 
     @AfterMethod
@@ -70,6 +73,15 @@ public class TestCaseMix extends TestBase {
         comentPage.tapBackBtn();
         comentPage.tapBackBtn();
         comentPage.tapBackBtn();
+        reviewPage.tapProdukBtn();
+        reviewPage.tapARBtn();
+        reviewPage.setOverallRate();
+        reviewPage.setPackagingRate();
+        reviewPage.setPrice();
+        reviewPage.setRepurchase();
+        reviewPage.Addreview(faker.lorem().sentence(35));
+        reviewPage.tapCeklisBtn();
+        reviewPage.tapBackBtn();
         homepage.tapNotifBtn();
         notifPage.tapBackBtn();
         homepage.tapNotifBtn();
