@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.Random;
 
 public class ReviewPage extends TestBase {
-    @AndroidFindBy(id ="com.fdbr.android.debug:id/toolbar_back_button_image")
+    @AndroidFindBy(id ="com.fdbr.android.debug:id/toolbar_back_button")
     MobileElement BackBtn;
     @AndroidFindBy(id = "com.fdbr.android.debug:id/fl_more_reviews")
     MobileElement RLBrn;
@@ -39,7 +39,7 @@ public class ReviewPage extends TestBase {
     MobileElement btnPurchaseNo;
     @AndroidFindBy(id = "com.fdbr.android.debug:id/txt_story")
     MobileElement writeReview;
-    @AndroidFindBy(id = "com.fdbr.android.debug:id/toolbar_action_button")
+    @AndroidFindBy(xpath = "//android.widget.FrameLayout[@index='3']")
     MobileElement CeklisBtn;
 
 

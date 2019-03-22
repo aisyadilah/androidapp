@@ -25,6 +25,7 @@ public class TestCaseMix extends TestBase {
     private ScrollDown scrollDown;
     private ScrollUp scrollUp;
     private Faker faker;
+    private AddProduct addProduct;
 
     public TestCaseMix(){
         super();
@@ -45,6 +46,7 @@ public class TestCaseMix extends TestBase {
         scrollDown = new ScrollDown();
         scrollUp = new ScrollUp();
         faker = new Faker();
+        addProduct = new AddProduct();
     }
 
     @AfterMethod
@@ -60,6 +62,26 @@ public class TestCaseMix extends TestBase {
         onboardingpage.clickLoginBtn();
         loginForm.loginProses(prop.getProperty("username"), prop.getProperty("password"));
         homepage.tapXBtn();
+        navigationBar.tapPlusBtn();
+        addProduct.tapAddProductBtn();
+        addProduct.tapPhotoBtn();
+        addProduct.tapAllowBtn();
+        addProduct.tapPhotoBtn();
+        addProduct.tapCaptureBtn();
+        addProduct.tapAllowBtn();
+        addProduct.tapCeklisBtn();
+        addProduct.tapBrandName();
+        addProduct.tapSelectBrand();
+        addProduct.tapProductCategory();
+        addProduct.tapMakeUp();
+        addProduct.tapFace();
+        addProduct.tapFoundation();
+        addProduct.tapCreme();
+        addProduct.setTxtProductName("Brand 1");
+        addProduct.setTxtShade("Shade 1");
+        addProduct.setTxtDesc(faker.lorem().sentence(35));
+        addProduct.setPrice("100.000");
+        addProduct.tapAddProductBtn();
         homepage.tapNotifBtn();
         Thread.sleep(5000);
         scrollDown.ScrollDown();

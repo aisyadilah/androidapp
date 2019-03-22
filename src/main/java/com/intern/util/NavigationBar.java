@@ -14,6 +14,8 @@ public class NavigationBar extends TestBase {
     MobileElement HomeBtn;
     @AndroidFindBy(xpath = "//android.widget.RelativeLayout[@content-desc='view2']")
     MobileElement FeedBtn;
+    @AndroidFindBy(xpath = "//android.widget.RelativeLayout[@content-desc='view3']")
+    MobileElement PlusBtn;
     @AndroidFindBy(xpath = "//android.widget.RelativeLayout[@content-desc='view4']")
     MobileElement DisBtn;
     @AndroidFindBy(xpath = "//android.widget.RelativeLayout[@content-desc='view5']")
@@ -25,6 +27,9 @@ public class NavigationBar extends TestBase {
     }
     public void tapFeedBtn(){
         FeedBtn.click();
+    }
+    public void tapPlusBtn(){
+        PlusBtn.click();
     }
     public void tapDisBtn(){
         DisBtn.click();
