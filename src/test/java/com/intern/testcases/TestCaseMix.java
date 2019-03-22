@@ -26,6 +26,7 @@ public class TestCaseMix extends TestBase {
     private ScrollUp scrollUp;
     private Faker faker;
     private AddProduct addProduct;
+    private EditProfilePage editProfilePage;
 
     public TestCaseMix(){
         super();
@@ -47,6 +48,7 @@ public class TestCaseMix extends TestBase {
         scrollUp = new ScrollUp();
         faker = new Faker();
         addProduct = new AddProduct();
+        editProfilePage = new EditProfilePage();
     }
 
     @AfterMethod
@@ -190,5 +192,8 @@ public class TestCaseMix extends TestBase {
         navigationBar.tapHomeBtn();
         homepage.tapNotifBtn();
         notifPage.tapBackBtn();
+        navigationBar.tapProfileBtn();
+        editProfilePage.tapSettingbtn();
+        editProfilePage.tapLogout();
     }
 }

@@ -52,6 +52,8 @@ public class EditProfilePage extends TestBase {
     public WebElement textBox;
     @AndroidFindBy(id = "com.fdbr.android.debug:id/edt_bio")
     public WebElement textBio;
+    @AndroidFindBy(id = "com.fdbr.android.debug:id/rel_logout")
+    MobileElement Logout;
 
     public EditProfilePage(){
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -115,5 +117,8 @@ public class EditProfilePage extends TestBase {
     }
     public void clearExistingBio(){
         textBio.clear();
+    }
+    public void tapLogout(){
+        Logout.click();
     }
 }
